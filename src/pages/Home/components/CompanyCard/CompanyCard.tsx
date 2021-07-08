@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 
 // components
 import BudgetCard from '../BudgetCard/BudgetCard';
+import BudgetEdit from '../BudgetEdit/BudgetEdit';
+
+// redux
+import { openModal } from 'features/modal/modalSlice';
 
 import { Card, CardHeader, CardBody } from './styles';
 
@@ -10,10 +15,12 @@ interface CompanyProps {
 }
 
 const Company: React.FC<CompanyProps> = ({ data }) => {
+  const dispatch = useDispatch();
+
   if (!data) return <></>;
 
   return (
-    <Card>
+    <Card onClick={() => dispatch(openModal(<BudgetEdit data={data} />))}>
       <CardHeader>
         <h2>{data?.name}</h2>
         <div className='date_container'>

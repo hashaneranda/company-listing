@@ -1,8 +1,5 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useFormik } from 'formik';
-import Grid from '@material-ui/core/Grid';
-import { useHistory } from 'react-router-dom';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 // components
 import CompanyCard from './components/CompanyCard/CompanyCard';
@@ -10,17 +7,10 @@ import CompanyCard from './components/CompanyCard/CompanyCard';
 // redux
 import { RootState } from 'app/rootReducer';
 
-// types
-import { Items, InitialData, FormItem } from './types';
-
-// utils
-
 // styles
 import { Container, MainWrapper, CompanyWrapper } from './styles';
 
 const Form: React.FC = () => {
-  const history = useHistory();
-  const dispatch = useDispatch();
   const comapany = useSelector((state: RootState) => state.company.comapany);
 
   return (

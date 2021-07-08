@@ -15,11 +15,13 @@ const createdSlice = createSlice({
   initialState,
   reducers: {
     editComapany(state, action: PayloadAction<any | void>) {
-      state.comapany[state.comapany.findIndex((item: any) => item.id === action.payload.id)] = action.payload.data;
+      const comapanyTemp = [...state.comapany];
+
+      comapanyTemp[comapanyTemp.findIndex((item: any) => item.id === action.payload.id)] = action.payload;
 
       return {
         ...state,
-        comapany: [...state.comapany],
+        comapany: [...comapanyTemp],
       };
     },
   },
