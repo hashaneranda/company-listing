@@ -18,7 +18,12 @@ const BudgetContainer: React.FC<BudgetContainerProps> = ({ image, title, amount,
     <CardWrapper>
       <CardBody>
         <p>{title}</p>
-        <h4>{amount}</h4>
+        <h4>
+          {new Intl.NumberFormat('de-DE', {
+            style: 'currency',
+            currency: 'EUR',
+          }).format(amount)}
+        </h4>
       </CardBody>
     </CardWrapper>
   </Card>

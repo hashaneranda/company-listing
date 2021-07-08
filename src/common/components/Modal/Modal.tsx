@@ -12,15 +12,9 @@ import { ModalComp, PaperWrapper, Image } from './styles';
 interface ModalComponentProps extends ModalProps {
   open: boolean;
   // children: React.ReactNode | React.ReactNode[],
-  handleClose: Function;
+  handleClose: () => any;
   showCloseBtn?: boolean;
 }
-
-const defaultProps = {
-  open: false,
-  handleClose: () => {},
-  showCloseBtn: false,
-};
 
 /**
  *Modal Component
@@ -34,13 +28,7 @@ const defaultProps = {
  * }
  * @returns Modal Component
  */
-const ModalComponent = ({
-  children,
-  open = false,
-  handleClose = () => {},
-  showCloseBtn = false,
-  ...props
-}: ModalComponentProps & typeof defaultProps) => {
+const ModalComponent = ({ children, open = false, handleClose = () => null, showCloseBtn = false, ...props }: ModalComponentProps) => {
   return (
     <ModalComp
       aria-labelledby='simple-modal-title'
