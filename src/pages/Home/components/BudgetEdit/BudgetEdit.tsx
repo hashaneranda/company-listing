@@ -1,23 +1,20 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { useDispatch } from 'react-redux';
 
 // assets
 import { budgetIcon } from 'config/images';
 
-// redux
-import { editComapany } from 'features/company/companySlice';
-import { closeModal } from 'features/modal/modalSlice';
-
 // components
 import { TextInput } from 'common/components/FormHelper/FormHelper';
 import { PrimaryButton } from 'common/components/Button/Button';
+import { successNoty } from 'common/components/Notification/Notification';
 
 import { Container, Form } from './styles';
 
 interface CompanyProps {
   data: any;
+  handleSubmit: (e: any) => void;
 }
 
 interface InitialData {
@@ -28,9 +25,7 @@ export const initialData: InitialData = {
   budget: '',
 };
 
-const BudgetEdit: React.FC<CompanyProps> = ({ data }) => {
-  const dispatch = useDispatch();
-
+const BudgetEdit: React.FC<CompanyProps> = ({ data, handleSubmit }) => {
   const validationSchema = Yup.object().shape({
     budget: Yup.number().required('Budget is Required').min(data.budget_spent),
   });
@@ -44,10 +39,8 @@ const BudgetEdit: React.FC<CompanyProps> = ({ data }) => {
         budget: v.budget,
       };
 
-      console.log('submitted', v, payload);
-      dispatch(editComapany(payload));
-
-      dispatch(closeModal());
+      handleSubmit(payload);
+      successNoty({ msg: `${data?.name} budget updated successfully` });
     },
   });
 
@@ -67,7 +60,7 @@ const BudgetEdit: React.FC<CompanyProps> = ({ data }) => {
           inputError={formik.errors['budget']}
         />
 
-        <PrimaryButton className='budget_edit__btn' type='submit'>
+        <PrimaryButton className='budget_edit__btn' type='submit' data-testid='submit_btn'>
           Update
         </PrimaryButton>
       </Form>

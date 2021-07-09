@@ -11,6 +11,9 @@ export const ModalComp = styled(Modal)`
 export const PaperWrapper = styled(Paper)`
   position: relative;
   padding-top: 3em;
+  background: ${props => props.theme.palette.background.secondary};
+  color: ${props => props.theme.palette.typography.main};
+
   &:focus {
     outline: none;
   }

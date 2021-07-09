@@ -1,15 +1,13 @@
-# order-form
+# Billie App
 
 ## What's inside
 
 - [redux-toolkit](https://github.com/reduxjs/redux-toolkit) (state management)
 - [styled-components](https://github.com/styled-components/styled-components) (JSX CSS framework)
 - [Axios](https://github.com/mzabriskie/axios) (a library for XMLHttpRequests)
-- [Redux Saga](https://github.com/redux-saga/redux-saga/) (a redux middleware to handle data fetching)
 - [Formik](https://github.com/formium/formik) (Forms in react without hassle)
 - [Yup](https://github.com/jquense/yup) (Schema validations)
 - [React-Toastify](https://github.com/fkhadra/react-toastify) (Notifications)
-
 
 For code quality:
 
@@ -38,6 +36,7 @@ Install the dependencies:
 ```bash
 yarn install
 ```
+
 and create a new file .env and copy the content of .env.sample
 
 ### Commands
@@ -73,6 +72,6 @@ src\
  |--common\         # common Compoenents and utilities
  |--config\         # Configrations of the app (Constants, Images links)
  |--feature\        # Redux Slices, Sagas , Watchers
- |--services\       # Services for API calls and functions
+ |--pages\          # App pages
  |--index.js        # react app - app entry point
 ```

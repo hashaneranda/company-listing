@@ -39,7 +39,7 @@ const ModalComponent = ({ children, open = false, handleClose = () => null, show
     >
       <Grow in={open}>
         <PaperWrapper>
-          {showCloseBtn ? <Image src={closeBtn} alt='close' onClick={handleClose} /> : ''}
+          {showCloseBtn ? <Image src={closeBtn.default} alt='close' onClick={handleClose} data-testid='modal_close' /> : ''}
           {children}
         </PaperWrapper>
       </Grow>

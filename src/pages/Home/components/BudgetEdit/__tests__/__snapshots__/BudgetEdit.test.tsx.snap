@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BudgetEdit Componenet should take a snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-jRQAMF VWGDG"
+  >
+    <h3>
+      Martian Firma
+    </h3>
+    <form
+      class="sc-gKckTs jrnvto"
+    >
+      <div
+        class="MuiFormControl-root sc-bdvvaa iYNPUu"
+      >
+        <div
+          class="MuiFormControl-root MuiTextField-root"
+        >
+          <label
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink"
+            data-shrink="true"
+            for="budget"
+            id="budget-label"
+          >
+            Budget
+          </label>
+          <div
+            class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedStart"
+          >
+            <div
+              class="MuiInputAdornment-root MuiInputAdornment-positionStart"
+            >
+              <img
+                alt="budget"
+                src="money-bag.svg"
+              />
+            </div>
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedStart"
+              id="budget"
+              name="budget"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <p
+          class="MuiFormHelperText-root defaultHellperTxt"
+        />
+      </div>
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-text sc-eCImvq ueBvO budget_edit__btn"
+        data-testid="submit_btn"
+        tabindex="0"
+        type="submit"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Update
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;

@@ -6,7 +6,8 @@ import BudgetCard from '../BudgetCard/BudgetCard';
 import BudgetEdit from '../BudgetEdit/BudgetEdit';
 
 // redux
-import { openModal } from 'features/modal/modalSlice';
+import { openModal, closeModal } from 'features/modal/modalSlice';
+import { editComapany } from 'features/company/companySlice';
 
 import { Card, CardHeader, CardBody } from './styles';
 
@@ -17,10 +18,15 @@ interface CompanyProps {
 const Company: React.FC<CompanyProps> = ({ data }) => {
   const dispatch = useDispatch();
 
+  const handleBudgetUpdate = (payload: any) => {
+    dispatch(editComapany(payload));
+    dispatch(closeModal());
+  };
+
   if (!data) return <></>;
 
   return (
-    <Card onClick={() => dispatch(openModal(<BudgetEdit data={data} />))}>
+    <Card onClick={() => dispatch(openModal(<BudgetEdit data={data} handleSubmit={handleBudgetUpdate} />))}>
       <CardHeader>
         <h2>{data?.name}</h2>
         <div className='date_container'>

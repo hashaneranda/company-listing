@@ -1,3 +1,3 @@
 export interface InitialState {
-  comapany: unknown[];
+  comapany: any[];
 }

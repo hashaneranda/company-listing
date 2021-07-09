@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Button } from '@material-ui/core';
+import tinycolor from 'tinycolor2';
 
 const baseButton = css`
   text-transform: unset;
@@ -16,9 +17,9 @@ const baseButton = css`
 
 export const PrimaryBtn = styled(Button)`
   ${baseButton};
-  background-color: ${props => props.theme.palette.typography.main};
+  background-color: ${props => props.theme.palette.color.primary};
   color: ${props => props.theme.palette.background.main};
   &:hover {
-    background-color: ${props => props.theme.palette.typography.secondary};
+    background-color: ${props => tinycolor(props.theme.palette.color.primary).darken(15).toHexString()};
   }
 `;
