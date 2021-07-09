@@ -1,4 +1,4 @@
-# Billie App
+# Billie App - company-listing
 
 ## What's inside
 
@@ -27,7 +27,7 @@ For testing:
 Clone the repo:
 
 ```bash
-git clone https://github.com/hashaneranda/order-form
+git clone https://github.com/hashaneranda/company-listing
 cd order-form
 ```
 
